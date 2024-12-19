@@ -6,6 +6,7 @@ import About from "./assets/Component-2/About";
 import Dashboard from "./assets/Component-2/Dashboard";
 import Navbar from "./assets/Component-2/Navbar";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import ParamComp from './assets/Component-2/ParamComp';
 
 const router = createBrowserRouter([
   {
@@ -32,8 +33,18 @@ const router = createBrowserRouter([
       <div>
         <Navbar />
         <Dashboard />
+        
       </div>
     ),
+  },
+  {
+    path: "/student/:id",
+    element:
+    <div>
+      <Navbar />
+      <ParamComp />
+    </div>
+    
   },
 ]);
 
@@ -41,6 +52,7 @@ function App() {
   return (
     <div>
       <RouterProvider router={router} />
+      
     </div>
   );
 }
